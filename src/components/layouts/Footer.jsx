@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import bluebg from "../../assets/images/common/blue-bg.png";
+
 const HomeFooter = () => {
+  console.log(bluebg);
   const links = [
     {
       title: "AI网站建设",
@@ -73,7 +75,7 @@ const HomeFooter = () => {
     },
   ];
   return (
-    <div style={{ backgroundImage: `url(${bluebg})` }} className="text-white">
+    <div style={{ background: `url(${bluebg})` }} className="text-white">
       <div className="py-10">
         <div className="container mx-auto flex justify-between space-x-10">
           <div className="shrink-0 flex space-x-10">
