@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer-bg {
+  background-image: url("./assets/images/common/blue-bg.png") !important;
+}
