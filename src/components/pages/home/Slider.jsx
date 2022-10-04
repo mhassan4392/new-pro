@@ -52,13 +52,13 @@ const ShowcaseSlider = () => {
             <img
               src={slide}
               alt=""
-              className="h-[85vh] overflow-hidden w-full"
+              className="md:h-[85vh] overflow-hidden w-full"
             />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <div className="absolute right-0 left-0 bottom-10 z-20 flex items-center justify-center space-x-5">
+      <div className="absolute right-0 left-0 bottom-10 z-20 lg:flex items-center justify-center space-x-5 hidden">
         <img
           src={prev}
           onClick={() => swiper.slidePrev()}

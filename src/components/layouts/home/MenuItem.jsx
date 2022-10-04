@@ -1,37 +1,18 @@
 import { useRef, useState } from "react";
 
-const HomeFeature = ({ f, ...rest }) => {
+const MenuItem = ({ f, ...rest }) => {
   const height = useRef(null);
   const [hover, setHover] = useState(false);
   return (
     <div
       ref={height}
       {...rest}
-      className={`flex flex-col lg:flex-row items-center p-5 border relative h-48 cursor-pointer transition-all duration-500 ${
+      className={`flex flex-col lg:flex-row items-center p-5 relative h-48 cursor-pointer transition-all duration-500 footer-bg text-white ${
         hover ? "shadow-lg" : ""
       }`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div
-        className={`absolute bottom-0 right-0 h-[1px] transition-all duration-500 bg-primary ${
-          hover ? "w-full" : "w-0"
-        }`}
-      ></div>
-      <div
-        className={`absolute top-0 left-0 h-[1px] transition-all duration-500 bg-primary ${
-          hover ? "w-full" : "w-0"
-        }`}
-      ></div>
-      <div
-        className={`absolute left-0 top-0 w-[1px] bg-primary transition-all duration-500`}
-        style={{ height: hover ? height?.current?.clientHeight + "px" : "0" }}
-      ></div>
-      <div
-        className={`absolute right-0 bottom-0 w-[1px] bg-primary transition-all duration-500`}
-        style={{ height: hover ? height?.current?.clientHeight + "px" : "0" }}
-      ></div>
-
       <div
         className={`relative border ${f.bg ? "bg-primary" : ""} ${
           !hover ? "border-gray-500" : "border-primary"
@@ -62,14 +43,17 @@ const HomeFeature = ({ f, ...rest }) => {
             ></div>
           </div>
         </div>
-        <img src={f.image} className="h-20 lg:h-auto lg:w-32" alt="" />
+        <img src={f.image} className="lg:w-32 w-20" alt="" />
       </div>
-      <div className="ml-4 mt-5 lg:mt-0">
-        <p className="text-sm lg:text-2xl lg:font-medium mb-2">{f.text}</p>
-        <p className="hidden lg:block">{f.desc}</p>
+      <p className="text-sm sm:text-lg font-medium mb-2 lg:hidden mt-5">
+        {f.text}
+      </p>
+      <div className="ml-4 hidden lg:block">
+        <p className="text-2xl font-medium mb-2">{f.text}</p>
+        <p>{f.desc}</p>
       </div>
     </div>
   );
 };
 
-export default HomeFeature;
+export default MenuItem;

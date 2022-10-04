@@ -78,7 +78,7 @@ const HomeFooter = () => {
       //   style={{ backgroundImage: "url('/src/assets/images/home/blue-bg.png')" }}
       className="text-white footer-bg"
     >
-      <div className="py-10">
+      <div className="py-10 hidden lg:block">
         <div className="container mx-auto flex justify-between space-x-10">
           <div className="shrink-0 flex space-x-10">
             {links.map((link, i) => (
@@ -107,12 +107,21 @@ const HomeFooter = () => {
           </div>
         </div>
       </div>
-      <div className="py-10 border-t">
+      <div className="py-10 border-t hidden md:block">
         <div className="container mx-auto grid grid-cols-5 gap-8">
           {section2Links.map((link, i) => (
             <div key={i}>
               <h3 className="text-3xl font-medium mb-2">{link.title}</h3>
               <NavLink to={link.link}>{link.linkTitle}</NavLink>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="py-10">
+        <div className="container mx-auto flex flex-wrap justify-between">
+          {section2Links.map((link, i) => (
+            <div key={i}>
+              <h3 className="text-lg mb-2">{link.title}</h3>
             </div>
           ))}
         </div>

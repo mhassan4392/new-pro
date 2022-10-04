@@ -17,8 +17,8 @@ const HomeInfo = () => {
   return (
     <>
       <div className="border-t border-b py-10 mt-20 mb-5">
-        <div className="flex items-center justify-between container mx-auto">
-          <div className="flex items-center justify-center space-x-5">
+        <div className="flex items-center justify-center lg:justify-between container mx-auto">
+          <div className="md:flex items-center justify-center space-x-5 hidden">
             {infos.map((info, i) => (
               <NavLink
                 to={info.link}
@@ -45,16 +45,16 @@ const HomeInfo = () => {
             ))}
           </div>
 
-          <div className="flex items-center space-x-5">
+          <div className="flex flex-col lg:flex-row items-center space-x-5">
             <div>
               <h3 className="text-[40px] font-medium">400-6446-365</h3>
-              <p className="indent-5 text-gray-500">
+              <p className="indent-5 text-gray-500 hidden md:block">
                 也许您需要专业的服务，欢迎来电咨询
               </p>
             </div>
             <div>
               <h3 className="text-[40px] font-medium">010-64928252</h3>
-              <p className="indent-5 text-gray-500">
+              <p className="indent-5 text-gray-500 hidden lg:block">
                 您的需求，是我们前进最大的动力
               </p>
             </div>
@@ -62,7 +62,7 @@ const HomeInfo = () => {
         </div>
       </div>
 
-      <div className="container mx-auto my-5 flex">
+      <div className="container mx-auto my-5 lg:flex hidden">
         <span className="shrink-0 mr-3">友情链接： &nbsp;</span>
         <div className="flex items-center flex-wrap">
           {Array.from({ length: 15 }).map((i, a) => (

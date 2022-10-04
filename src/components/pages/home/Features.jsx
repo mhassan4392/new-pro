@@ -75,34 +75,41 @@ const HomeFeatures = () => {
   ];
   return (
     <div className="container mx-auto py-8">
-      <div className="flex">
-        <div className="w-2/6 border rounded px-8 py-12 mr-5">
+      <div className="flex flex-col lg:flex-row mt-10">
+        <div className="w-2/6 border rounded px-8 py-12 mr-5 hidden lg:block">
           <h3 className="text-[40px] font-semibold">AI网站建设</h3>
           <p>借AI之「势」，赋网站新「能」</p>
           <p>
             AI网站建设，将单纯内容维护与编辑升级为更高维度的「人机交互」，基于AI赋予网站更多职能，让网站完成从信息传达工具到辅助决策助手的进化。
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <h3 className="text-xl font-semibold my-3 text-center lg:hidden">
+          AI网站建设
+        </h3>
+        <div className="grid grid-cols-3 gap-5 justify-center">
           {features1.map((f, i) => (
             <HomeFeature f={f} key={i} />
           ))}
         </div>
       </div>
 
-      <div className="flex mt-10">
-        <div className="w-2/6 border rounded px-8 py-12 mr-5">
+      <div className="flex flex-col lg:flex-row mt-10">
+        <div className="w-2/6 border rounded px-8 py-12 mr-5 hidden lg:block">
           <h3 className="text-[40px] font-semibold">AI解决方案</h3>
           <p>借AI之「势」，赋网站新「能」</p>
           <p>
             借助AI技术，打造全新互联网产品形态，让传统行业解决方案迸发出新的可能
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <h3 className="text-xl font-semibold my-3 text-center lg:hidden">
+          AI解决方案
+        </h3>
+        <div className="grid grid-cols-3 gap-5 justify-center">
           {features2.map((f, i) => (
             <HomeFeature f={f} key={i} />
           ))}
         </div>
+        {/* <h3 className="text-[40px] font-semibold">AI解决方案</h3> */}
       </div>
     </div>
   );
